@@ -12,6 +12,9 @@ public class Group {
         }
         this.people =  newPeople;
     }
+    public Group(Group group) {
+        this.people = group.people;
+    }
     public int size(Group group) {
         return group.people.length;
     }
