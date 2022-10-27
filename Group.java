@@ -1,5 +1,5 @@
 public class Group {
-    protected String[] people;
+    private final String[] people;
 
     public Group(String[] people) {
         String[] newPeople;
@@ -15,19 +15,25 @@ public class Group {
     public Group(Group group) {
         this.people = group.people;
     }
-    public int size(Group group) {
-        return group.people.length;
+    public int size() {
+        return people.length;
     }
     @Override
     public String toString() {
         String str = "";
         for (int n = 0 ; n < this.people.length ; n++) {
             if (n == 0) {
-                System.out.print(people[n]);
+                str += people[n];
                 continue;
             }
             str += String.format("/%s", people[n]);
         }
         return str;
+    }
+    public String[] getPeople() {
+        return people;
+    }
+    public void setPeople(int index, String name) {
+        this.people[index] = name;
     }
 }
